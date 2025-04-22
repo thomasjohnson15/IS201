@@ -1,0 +1,110 @@
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at top center, #111, #000);
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border: 3px solid #00ffe0;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #00ffe0;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 32px;
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff66ff;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #00ccff;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #111;
+  color: #0ff;
+  border: 2px solid #0ff;
+  outline: none;
+}
+
+.shake-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #ff00ff;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff66ff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.shake-button:hover {
+  transform: scale(1.1);
+}
+
+/* Magic 8 Ball styling */
+.ball {
+  margin: 40px auto 0;
+  width: 200px;
+  height: 200px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #444;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.inner-circle {
+  width: 100px;
+  height: 100px;
+  background: #222;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ffe0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px #00ffe0;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px #222; }
+  50% { box-shadow: 0 0 40px #00ffe0; }
+  100% { box-shadow: 0 0 20px #222; }
+}

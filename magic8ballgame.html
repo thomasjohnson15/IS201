@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magic 8 Ball</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="8ball.css">
+</head>
+<body>
+    <br>
+    
+<div>
+    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="tab.html">Return to scratch page</a></li>
+    </div>
+    
+  <div class="container">
+    <h1>🔮 Magic 8 Ball 🔮</h1>
+    <p class="subtitle">Ask your deepest yes or no question...</p>
+
+    <input type="text" id="question" placeholder="Enter your question..." />
+    <button onclick="shakeBall()" class="shake-button">Shake the Ball</button>
+
+    <div class="ball" id="ball">
+      <div class="inner-circle">
+        <p id="answer">8</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "It is certain.",
+      "Without a doubt.",
+      "Yes – definitely.",
+      "Ask again later.",
+      "Cannot predict now.",
+      "Don't count on it.",
+      "Very doubtful.",
+      "Outlook not so good.",
+      "Yes.",
+      "No.",
+      "Signs point to yes.",
+      "Better not tell you now."
+    ];
+
+    function shakeBall() {
+      const input = document.getElementById("question").value.trim();
+      if (input === "") {
+        alert("Please enter a question!");
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      const answer = answers[randomIndex];
+
+      const ball = document.getElementById("ball");
+      const answerText = document.getElementById("answer");
+
+      // Trigger animation
+      ball.classList.add("shake");
+      answerText.innerText = "";
+
+      setTimeout(() => {
+        ball.classList.remove("shake");
+        answerText.innerText = answer;
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
